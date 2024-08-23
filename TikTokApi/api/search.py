@@ -95,8 +95,9 @@ class Search:
                     sec_uid = user.get("user_info").get("sec_uid")
                     uid = user.get("user_info").get("user_id")
                     username = user.get("user_info").get("unique_id")
+                    data = user.get("user_info")
                     yield Search.parent.user(
-                        sec_uid=sec_uid, user_id=uid, username=username
+                        sec_uid=sec_uid, user_id=uid, username=username, data=data
                     )
                     found += 1
 
