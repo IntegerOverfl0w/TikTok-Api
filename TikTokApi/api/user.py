@@ -255,9 +255,9 @@ class User:
             )
         else:
             self.__update_id_sec_uid_username(
-                data["id"],
-                data["secUid"],
-                data["uniqueId"],
+                data["id"] if "id" in data else data["uid"],
+                data["secUid"] if "secUid" in data else data["sec_uid"],
+                data["uniqueId"] if "uniqueId" in data else data["unique_id"],
             )
 
         if None in (self.username, self.user_id, self.sec_uid):
